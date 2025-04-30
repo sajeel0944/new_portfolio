@@ -26,6 +26,7 @@ function About_Section() {
           </motion.div>
 
           <div className="flex flex-col md:flex-row items-center gap-12">
+            {/* ye image section hai */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -47,6 +48,7 @@ function About_Section() {
               </div>
             </motion.div>
 
+            {/* ye discrition section hai */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -55,18 +57,21 @@ function About_Section() {
               className="md:w-1/2 space-y-6"
             >
               <h3 className="text-2xl font-bold text-white">
-              Frontend Developer with a passion for interactive web experiences
+                Frontend Developer with a passion for interactive web
+                experiences
               </h3>
               <p className="text-gray-400">
-              I am a Frontend Developer skilled in TypeScript, HTML, CSS, Tailwind CSS,
-              Figma, and Next.js. Currently learning Python and OpenAI SDK to expand my
-              expertise. As a student at GIAIC, I am passionate about building 
-              interactive and responsive web applications.
+                I am a Frontend Developer skilled in TypeScript, HTML, CSS,
+                Tailwind CSS, Figma, and Next.js. Currently learning Python and
+                OpenAI SDK to expand my expertise. As a student at GIAIC, I am
+                passionate about building interactive and responsive web
+                applications.
               </p>
               <p className="text-gray-400">
-              Im deeply interested in modern web technologies, performance optimization,
-              and clean code practices. My goal is to continuously learn and grow in the 
-              fields of AI and full-stack development.
+                Im deeply interested in modern web technologies, performance
+                optimization, and clean code practices. My goal is to
+                continuously learn and grow in the fields of AI and full-stack
+                development.
               </p>
               <div className="flex flex-wrap gap-2">
                 <Badge className="bg-gray-800 text-gray-300">Html</Badge>

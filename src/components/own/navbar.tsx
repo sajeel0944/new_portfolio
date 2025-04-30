@@ -46,6 +46,7 @@ function Navber() {
             ))}
           </div>
 
+            {/* user is buttom par click mery CV user ky pass dowload ho jaye gi */}
           <Link href={"/picture/sajeelcv.pdf"}>
             <div
               className={`${display ? "hidden" : "block"} md:flex items-center space-x-4 [@media(max-width:768px)]:absolute [@media(max-width:768px)]:top-[500px] [@media(max-width:768px)]:left-5`}
@@ -57,6 +58,7 @@ function Navber() {
             </div>
           </Link>
 
+            {/* ye three dot wali image hai jo md screen par show ho ye gi */}
           <Image
             src={"/picture/three-row-icon.png"}
             alt=""

@@ -17,6 +17,17 @@ import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+//  ye interface sanity ka data schema hai
 interface Project_type {
   title: string;
   description: string;
@@ -30,9 +41,21 @@ interface Project_type {
 }
 
 function Projects_Section() {
-  const [show_all_project, set_show_all_project] = useState<boolean>(false);
-  const [projects, setProjects] = useState<Project_type[]>([]);
+  const [show_all_project, set_show_all_project] = useState<boolean>(false); // jab user nichy waly button par click kary ga to is true ho gaye ga
+  const [projects, setProjects] = useState<Project_type[]>([]); // is main sanity ka project ka sara data is main aye ga
+  const [selectFilter, setselectFilter] = useState(""); // is main sanity ka data filter ho ky araha hai
 
+  // is main sanity ka data filter ho raha hai
+  const filter_project =
+    selectFilter === ""
+      ? projects
+      : projects.filter((project) =>
+          project.tags.some(
+            (value) => value.toLowerCase() == selectFilter.toLowerCase()
+          )
+        );
+
+  // is main sanity ka data projects ky andar ja raha hai
   useEffect(() => {
     const fetch_data = async () => {
       try {
@@ -71,8 +94,40 @@ function Projects_Section() {
           <div className="h-1 w-20 bg-purple-500 mx-auto mt-6"></div>
         </motion.div>
 
+
+        {/* is filter wala section hai */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="flex sm:justify-end"
+          >
+          {/* ye shadcn ky components hai */}
+          <Select onValueChange={(Value:string)=>{setselectFilter(Value)}}> {/*is ki value selectFilter ky andar ja rahe hai  */}
+            <SelectTrigger className="w-72 mb-5 cursor-pointer">
+              <SelectValue placeholder="Select a Option" className=" text-red-500" />
+            </SelectTrigger>
+            <SelectContent className="bg-gray-950">
+              <SelectGroup>
+                <SelectLabel>Options</SelectLabel>
+                <SelectItem className="text-white cursor-pointer" value="Typescript" >Typescript</SelectItem>
+                <SelectItem className="text-white cursor-pointer" value="Python">Python</SelectItem>
+                <SelectItem className="text-white cursor-pointer" value="Next.js">Next.js</SelectItem>
+                <SelectItem className="text-white cursor-pointer" value="Shadcn">Shadcn</SelectItem>
+                <SelectItem className="text-white cursor-pointer" value="Sanity">Sanity</SelectItem>
+                <SelectItem className="text-white cursor-pointer" value="Streamlit">Streamlit</SelectItem>
+                <SelectItem className="text-white cursor-pointer" value="Html">Html</SelectItem>
+                <SelectItem className="text-white cursor-pointer" value="Taliwind css">Taliwind css</SelectItem>
+                <SelectItem className="text-white cursor-pointer" value="Css">Css</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+        </motion.div>
+
+        {/*         is main sary project show ho rahy hai  */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project: Project_type, index) => (
+          {filter_project.map((project: Project_type, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -122,11 +177,11 @@ function Projects_Section() {
         </div>
 
         <div className="text-center mt-12">
-          <Button
+          <Button /* jab user is button par click karry ga to sary project show ho jaye gy*/
             className="bg-purple-600 hover:bg-purple-700 text-white cursor-pointer"
             onClick={() => set_show_all_project(!show_all_project)}
           >
-            {show_all_project ? "Show Less" : "View All Projects"}{" "}
+            {show_all_project ? "Show Less" : "View All Projects"}
             {show_all_project ? (
               <ArrowDown className="ml-2 h-4 w-4" />
             ) : (

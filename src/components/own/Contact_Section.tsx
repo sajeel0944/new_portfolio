@@ -12,14 +12,14 @@ import { useState } from "react";
 import { client } from "@/sanity/lib/client";
 
 function Contact_Section() {
+  // is main nichy from main sy data araha hai
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  const [successMessage, setSuccessMessage] = useState("");
-
+  const [successMessage, setSuccessMessage] = useState(""); // agar user ka message kaar
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -27,10 +27,12 @@ function Contact_Section() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+//   agar user nichy message send waly buttom par click karry ga to ye function chaly ga
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault(); // ye page ko reload hony sy lok raha hai
     console.log("Form submitted:", formData);
 
+    // ye sanity ka message schema hai
     const sanity_schema = {
       _type: "message",
       message: formData.message,
@@ -38,21 +40,21 @@ function Contact_Section() {
       name: formData.name,
     };
 
-    //  sanity ky nadar data jaraha hai
+    // user ka message sanity ky andar data jaraha hai
     try {
       const push_data = async () => {
         await client.create(sanity_schema);
       };
       push_data();
-      setSuccessMessage("Your message has been sent successfully!");
-      setFormData({ name: "", email: "", message: "" });
+      setSuccessMessage("Your message has been sent successfully!"); // handleSubmit jab chaly ga to SuccessMessage ky andar ye message jaye ga successfull ka bas 3 second ky liye
+      setFormData({ name: "", email: "", message: "" }); // user ka meaasge sanity main chaly jaye ga to FormData Mt ho jaye ga
+      // handleSubmit ky 3 second ky baat ye chaly ga 
       setTimeout(() => {
-        setSuccessMessage("");
+        setSuccessMessage(""); //  SuccessMessage ky mt ho jaye ga
       }, 3000); // 3 sec baad message remove hoga
     } catch (error) {
       console.log(`Not able to push comment to Sanity, Error: ${error}`);
     }
-    // Add form submit logic here (API, EmailJS, etc.)
   };
   return (
     <>
@@ -148,6 +150,7 @@ function Contact_Section() {
                     </div>
                   </div>
 
+                  {/*  ye messsge from wala section hai */}
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid grid-cols-1 gap-4">
                       <div className="space-y-2">
@@ -198,6 +201,7 @@ function Contact_Section() {
                     >
                       Send Message
                     </Button>
+                    {/* abhi successMessage mt hai agar user send message par click kary gai to handleSubmit chaly ga to  successMessage ky nadar successful ka message chala jaye ga to ye True ho jaye ga*/}
                     {successMessage && (
                     <Alert className="bg-green-600/10 border-green-600/30 text-green-300 mt-4 w-full">
                       <div className="flex items-start space-x-2">
@@ -208,7 +212,6 @@ function Contact_Section() {
                       </div>
                     </Alert>
                     )} 
-
                   </form>
                 </div>
               </CardContent>

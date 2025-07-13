@@ -43,11 +43,11 @@ interface Project_type {
 function Projects_Section() {
   const [show_all_project, set_show_all_project] = useState<boolean>(false); // jab user nichy waly button par click kary ga to is true ho gaye ga
   const [projects, setProjects] = useState<Project_type[]>([]); // is main sanity ka project ka sara data is main aye ga
-  const [selectFilter, setselectFilter] = useState(""); // is main sanity ka data filter ho ky araha hai
+  const [selectFilter, setselectFilter] = useState("All"); // is main sanity ka data filter ho ky araha hai
 
   // is main sanity ka data filter ho raha hai
   const filter_project =
-    selectFilter === ""
+    selectFilter === "All"
       ? projects
       : projects.filter((project) =>
           project.tags.some(
@@ -111,6 +111,7 @@ function Projects_Section() {
             <SelectContent className="bg-gray-950">
               <SelectGroup>
                 <SelectLabel>Options</SelectLabel>
+                <SelectItem className="text-white cursor-pointer" value="All" >All</SelectItem>
                 <SelectItem className="text-white cursor-pointer" value="Typescript" >Typescript</SelectItem>
                 <SelectItem className="text-white cursor-pointer" value="Python">Python</SelectItem>
                 <SelectItem className="text-white cursor-pointer" value="Next.js">Next.js</SelectItem>
@@ -118,8 +119,12 @@ function Projects_Section() {
                 <SelectItem className="text-white cursor-pointer" value="Sanity">Sanity</SelectItem>
                 <SelectItem className="text-white cursor-pointer" value="Streamlit">Streamlit</SelectItem>
                 <SelectItem className="text-white cursor-pointer" value="Html">Html</SelectItem>
-                <SelectItem className="text-white cursor-pointer" value="Taliwind css">Taliwind css</SelectItem>
                 <SelectItem className="text-white cursor-pointer" value="Css">Css</SelectItem>
+                <SelectItem className="text-white cursor-pointer" value="Taliwind Css">Taliwind Css</SelectItem>
+                <SelectItem className="text-white cursor-pointer" value="OpenAI Agent SDK">OpenAI Agent SDK</SelectItem>
+                <SelectItem className="text-white cursor-pointer" value="FastAPI">FastAPI</SelectItem>
+                <SelectItem className="text-white cursor-pointer" value="MongoDB">MongoDB</SelectItem>
+                <SelectItem className="text-white cursor-pointer" value="UV">UV</SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>

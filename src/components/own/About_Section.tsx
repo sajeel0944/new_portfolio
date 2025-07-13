@@ -57,21 +57,23 @@ function About_Section() {
               className="md:w-1/2 space-y-6"
             >
               <h3 className="text-2xl font-bold text-white">
-                Frontend Developer with a passion for interactive web
-                experiences
+                Full Stack Developer with a Passion for Interactive AI-Powered 
+                Web Experiences
               </h3>
               <p className="text-gray-400">
-                I am a Frontend Developer skilled in TypeScript, HTML, CSS,
-                Tailwind CSS, Figma, and Next.js. Currently learning Python and
-                OpenAI SDK to expand my expertise. As a student at GIAIC, I am
-                passionate about building interactive and responsive web
-                applications.
+                I am a Full Stack Developer skilled in TypeScript, HTML, CSS, Tailwind CSS, Figma, 
+                and Next.js for frontend development. On the backend, I work with Python, FastAPI, 
+                and integrate intelligent features using the OpenAI Agent SDK.
               </p>
               <p className="text-gray-400">
-                Im deeply interested in modern web technologies, performance
-                optimization, and clean code practices. My goal is to
-                continuously learn and grow in the fields of AI and full-stack
-                development.
+                As a student at GIAIC, I’m passionate about building responsive, interactive web 
+                applications and exploring the potential of AI-powered solutions like chatbots 
+                and smart assistants.
+              </p>
+              <p className="text-gray-400">
+                Im deeply interested in modern web technologies, performance optimization, and 
+                clean code practices. My goal is to continuously grow in the field of AI and 
+                full-stack development, delivering high-quality, intelligent web experiences.
               </p>
               <div className="flex flex-wrap gap-2">
                 <Badge className="bg-gray-800 text-gray-300">Html</Badge>
@@ -80,11 +82,15 @@ function About_Section() {
                 <Badge className="bg-gray-800 text-gray-300">
                   Tailwind CSS
                 </Badge>
-                <Badge className="bg-gray-800 text-gray-300">TypeScript</Badge>
+                <Badge className="bg-gray-800 text-gray-300">Typescript</Badge>
                 <Badge className="bg-gray-800 text-gray-300">Shadcn</Badge>
                 <Badge className="bg-gray-800 text-gray-300">Sanity</Badge>
                 <Badge className="bg-gray-800 text-gray-300">Python</Badge>
-                <Badge className="bg-gray-800 text-gray-300">Open Ai SDK</Badge>
+                <Badge className="bg-gray-800 text-gray-300">OpenAI Agent SDK</Badge>
+                <Badge className="bg-gray-800 text-gray-300">FastAPI</Badge>
+                <Badge className="bg-gray-800 text-gray-300">MongoDB</Badge>
+                <Badge className="bg-gray-800 text-gray-300">UV</Badge>
+                <Badge className="bg-gray-800 text-gray-300">Streamlit</Badge>
               </div>
               <Alert className="bg-purple-600/10 border-purple-600/30 text-purple-300">
                 <AlertDescription>

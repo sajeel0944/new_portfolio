@@ -26,12 +26,12 @@ function Skills_Section() {
     {
       name: "Backend Development",
       icon: <Server className="h-6 w-6" />,
-      items: ["Sanity"],
+      items: ["Sanity", "Python", "FastAPI", "MongoDB", "OpenAI Agent SDK", "UV"],
     },
     {
       name: "Learing",
       icon: <Smartphone className="h-6 w-6" />,
-      items: ["Python", "SDK"],
+      items: ["OpenAI Agent SDK"],
     },
   ];
   return (

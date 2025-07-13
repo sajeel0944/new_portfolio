@@ -24,11 +24,6 @@ export default function Home() {
 
   return (
     <div className="bg-gray-950 text-gray-200 min-h-screen">
-      {/* <Head>
-        <title>My Portfolio | Frontend Developer</title>
-        <meta name="description" content="Frontend Developer Portfolio" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head> */}
 
       {/* own navbar */}
       <Navber />

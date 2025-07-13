@@ -34,11 +34,12 @@ function Hero_Section() {
                 Love
               </h1>
               <p className="text-gray-400 text-lg mb-8 pr-9 text-justify">
-                I am a Frontend Developer skilled in TypeScript, HTML, CSS,
-                Tailwind CSS, Figma, and Next.js. Currently learning Python and
-                Open Ai SDK to expand my expertise. As a student at GIAIC, I am
-                passionate about building interactive web applications and
-                expanding my skills in AI and development.
+                I am a Full Stack Developer skilled in TypeScript, HTML, CSS, Tailwind CSS, Figma, 
+                and Next.js for frontend development. On the backend, I work with Python and FastAPI,
+                and I also build intelligent systems using the OpenAI Agent SDK. As a student at GIAIC, 
+                I am passionate about creating interactive web applications and developing real-world 
+                AI-powered solutions. I enjoy exploring full-stack architecture and integrating advanced 
+                AI capabilities into modern web platforms.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href={"#projects"}>
